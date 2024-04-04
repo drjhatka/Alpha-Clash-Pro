@@ -8,7 +8,8 @@
     <title>Alpha Clash Pro</title>
 </head>
 <body>
-    <main class="bg-slate-400 ">
+    <main class="bg-slate-400 pt-10 ">
+
         <section id="home" class="min-h-screen flex justify-center items-center" >
             <div class="bg-[#FFFFFF32] min-h-screen px-8 text-white flex flex-col gap-8 justify-center items-center">
                 <h1 class="text-6xl font-bold">Alpha Clash Pro</h1>
@@ -16,6 +17,61 @@
                 <button onclick="play()" class="btn btn-secondary">Play Now</button>
             </div>
         </section>
+       
+        <section id="playground" class="hidden flex flex-col gap-20 min-h-screen justify-center  items-center" >
+            <div class="flex justify-between w-8/12 mx-auto">
+                <button class="btn btn-primary">Life <span>1</span></button>
+                <button class="btn btn-primary">Score <span>0</span></button>
+            </div>
+            <div class="flex justify-center items-center border-2 max-h-64" >
+                <div class="mockup-phone border-primary rotate-90 ">
+                    <div class="camera "></div> 
+                    <div class="display">
+                      <div class="artboard artboard-demo phone-1"><span class="rotate-90 text-8xl">H</span>.</div>
+                    </div>
+                  </div>
+            </div>
+
+            <div id="keyboard">
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                  </div>
+            </div>      
+        </section>
+        <section id="score">
+            
+        </section>
     </main>
+    <script src="/js/alpha-clash.js"></script>
 </body>
 </html>
