@@ -8,26 +8,26 @@
     <title>Alpha Clash Pro</title>
 </head>
 <body>
-    <main class="bg-slate-400 pt-10 ">
+    <main class="bg-slate-400 ">
 
         <section id="home" class="min-h-screen flex justify-center items-center" >
             <div class="bg-[#FFFFFF32] min-h-screen px-8 text-white flex flex-col gap-8 justify-center items-center">
                 <h1 class="text-6xl font-bold">Alpha Clash Pro</h1>
                 <p class="text-lg">Play the ultimate Junior Dev Game</p>
-                <button onclick="play()" class="btn btn-secondary">Play Now</button>
+                <button onclick="navigate('home','playground')" class="btn btn-secondary">Play Now</button>
             </div>
         </section>
        
         <section id="playground" class="hidden flex flex-col gap-20 min-h-screen justify-center  items-center" >
             <div class="flex justify-between w-8/12 mx-auto">
-                <button class="btn btn-primary">Life <span>1</span></button>
-                <button class="btn btn-primary">Score <span>0</span></button>
+                <button class="btn btn-primary">Life <span id="life">1</span></button>
+                <button class="btn btn-primary">Score <span id="score">0</span></button>
             </div>
-            <div class="flex justify-center items-center border-2 max-h-64" >
+            <div class="flex justify-center items-center border-2 max-h-56" >
                 <div class="mockup-phone border-primary rotate-90 ">
                     <div class="camera "></div> 
                     <div class="display">
-                      <div class="artboard artboard-demo phone-1"><span class="rotate-90 text-8xl">H</span>.</div>
+                      <div class="artboard artboard-demo phone-1"><span id="screen" class="rotate-90 text-8xl">H</span>.</div>
                     </div>
                   </div>
             </div>
@@ -69,7 +69,7 @@
             </div>      
         </section>
         <section id="score">
-            
+
         </section>
     </main>
     <script src="/js/alpha-clash.js"></script>
