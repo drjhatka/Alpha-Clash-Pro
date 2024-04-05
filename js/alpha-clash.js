@@ -1,31 +1,55 @@
-
-//console.log(randomLetter)
+let life=parseInt(document.getElementById('life').innerText);
 let score =0;
-let randomLetter = generateRandLetter();
-play()
+randomLetter = play(generateRandLetter());
+
+document.getElementById('play_again').addEventListener('click', ()=>{
+    play(generateRandLetter()); 
+    navigate('score_container','playground')
+    document.getElementById('life').innerText = 5;
+})
 document.addEventListener('keyup',(keyEvent)=>{
-    if(randomLetter.toLowerCase().localeCompare(keyEvent.key)==0){
-        toggleKeyHighlight(keyEvent.key,'bg-green-500')   
-        console.log('adsasd')   
+    //check if key matches
+    if(keyEvent.key.localeCompare(randomLetter.toLowerCase())==0){
+        score++;
+        document.getElementById('score').innerText=score;
+        toggleKeyHighlight(keyEvent.key)
+        randomLetter = play(generateRandLetter())
     }
     else{
-        toggleKeyHighlight(keyEvent.key,'bg-red-500')    
+        life--;
+        if(life==0){
+            //end game 
+            navigate('playground','score_container')
+            //reset score
+            document.getElementById('score_num').innerText=score;
+            score=0;
+            document.getElementById('score').innerText=score;
+            life = 5;
+            return
+        }
+        else{
+            randomLetter = play(generateRandLetter())
+            document.getElementById('life').innerText= life;
+        }
     }
-    randomLetter = generateRandLetter()
-    play()
 })
 
-
+function clearKeyFormatting(className){
+    const keys = document.getElementsByClassName('kbd')
+    for (const key of keys) {
+        const element = document.getElementById(key.innerText);
+                element.classList.remove(className)
+    }
+}
 function navigate(currentElementId, nextElementId){
     toggleVisibility(currentElementId)
     toggleVisibility(nextElementId)
 }
-function play(){
+function play(randomLetter){
     const screen = document.getElementById('screen');
     screen.classList.add('-rotate-90')
     screen.innerText = randomLetter;
-    console.log(randomLetter)
-    return randomLetter.toLowerCase()
+    return randomLetter
 }
 function toggleKeyHighlight(exceptKey, color='bg-green-500'){ 
     const keys = document.getElementsByClassName('kbd')
@@ -48,7 +72,7 @@ function toggleKeyHighlight(exceptKey, color='bg-green-500'){
 }
 function toggleVisibility(elementId){
     const elementClassList = document.getElementById(elementId).classList;
-    return elementClassList.contains('hidden')? elementClassList.remove('hidden'):elementClassList.add('hidden')
+    elementClassList.contains('hidden')? elementClassList.remove('hidden'):elementClassList.add('hidden')
 }
 function generateRandLetter(){
     return 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>letter.toUpperCase())[Math.round(Math.random()*25)];

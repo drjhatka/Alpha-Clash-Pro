@@ -20,7 +20,7 @@
        
         <section id="playground" class="hidden flex flex-col gap-20 min-h-screen justify-center  items-center" >
             <div class="flex justify-between w-8/12 mx-auto">
-                <button class="btn btn-primary">Life <span id="life">1</span></button>
+                <button class="btn btn-primary">Life <span id="life">5</span></button>
                 <button class="btn btn-primary">Score <span id="score">0</span></button>
             </div>
             <div class="flex justify-center items-center border-2 max-h-56" >
@@ -68,8 +68,12 @@
                   </div>
             </div>      
         </section>
-        <section id="score">
+        <section id="score_container" class="hidden min-h-screen px-4 flex justify-center items-center">
+            <div>
+                <h1 class="text-3xl">Score <span id="score_num">0</span></h1>
+                <button id="play_again" class="btn btn-primary" >Play Again</button>
 
+            </div>
         </section>
     </main>
     <script src="/js/alpha-clash.js"></script>
